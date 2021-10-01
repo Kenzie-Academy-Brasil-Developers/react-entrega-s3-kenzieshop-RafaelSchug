@@ -1,0 +1,36 @@
+.cart__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cart__information {
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.cart__container .product__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: unset;
+    width: 100%;
+}
+
+.cart__container .product__card button {
+    background: red;
+    border: none;
+    font-weight: bold;
+    color: white;
+    width: 100px;
+    height: 40px;
+}

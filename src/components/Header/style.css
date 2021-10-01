@@ -1,14 +1,43 @@
 header {
     border-bottom: 1px solid gray;
-    height: 40px;
+    height: 50px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 0 20px;
-    gap: 20px;
 }
 
-header a {
-    text-decoration: none;
-    color: black;
+header ul {
+    list-style-type: none;
+    display: flex;
+    height: 50px;
+    gap: 5px;
+}
+
+header ul li {
+    line-height: 40px;
+    padding: 0 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: #636363;
+}
+
+header ul li:hover {
+    color: #1b1b1b;
+}
+
+header ul li span {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    line-height: 20px;
+    font-size: 14px;
+    background: #4343dd;
+    color: white;
+    border-radius: 50%;
 }
