@@ -59,6 +59,8 @@
     padding: 4px;
     color: white;
     font-weight: bold;
+    border-radius: 20px 6px 0 20px;
+    border: 1px solid white;
 }
 
 .product__card .lined-through {
@@ -76,9 +78,8 @@
 }
 
 .product__card:hover {
-    transform: scale(1.02);
-    border: 1px dashed #a7a7a7;
-
+    border: 1px solid #d3d3d3;
+    box-shadow: 0 0 4px 0px #3a3a3a;
 }
 
 .product__card img {
