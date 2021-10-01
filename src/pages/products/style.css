@@ -1,0 +1,15 @@
+.products__container {
+    display: flex;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product__card {
+    max-width: 200px;
+}
+
+.product__card img {
+    height: 150px;
+}
