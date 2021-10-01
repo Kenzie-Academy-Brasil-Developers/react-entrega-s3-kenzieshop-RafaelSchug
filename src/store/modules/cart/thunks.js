@@ -53,10 +53,9 @@ export const performCheckoutThunk = () => (dispatch) => {
     }).then(_ => {
         dispatch(performCheckout([]));
         toast.info("Obrigado por comprar na Kenzie Shop! Volte sempre :)", {autoClose: 3500})
+        localStorage.removeItem('@cart');
     })
 
     toast.promise(wait, {pending: "Processando pedido...", success:"Pedido finalizado com sucesso!"}, {autoClose: 2000})
 
-    localStorage.removeItem('@cart');
-    
 }
