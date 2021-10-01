@@ -36,6 +36,10 @@
     width: 100%;
 }
 
+.cart__container .product__card .price_desc {
+    border: none;
+}
+
 .cart__container .product_info :nth-child(n) {
     line-height: 25px;
 }

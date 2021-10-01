@@ -19,15 +19,19 @@ const Products = () => {
                     <div className='product__card' key={index}>
                         {onSale && <span className='onsale_tag'>{Math.round((discount / price * 100))}% OFF</span>}
                         <img src={img} alt={name} />
-                        <h4>{name}</h4>
-                        {onSale ? (
-                            <div>
-                                <p className='lined-through'>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-                                <p>{(price - discount).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-                            </div>
-                        ) : (
-                            <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-                        )}
+                        <div className='name_desc'>
+                            <h4>{name}</h4>
+                        </div>
+                        <div className='price_desc'>
+                                {onSale ? (
+                                    <>
+                                        <p className='lined-through'>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                                        <p>{(price - discount).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                                    </>
+                                ) : (
+                                    <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                                )}
+                                </div>
                         <button onClick={() => handleAddtoCart(id)}>Adicionar ao carrinho</button>
                     </div>
                 )

@@ -35,6 +35,7 @@ const Cart = () => {
                             <img src={img} alt={name} />
                             <div className='product_info'>
                                 <h4>{name}</h4>
+                                <div className='price_desc'>
                                 {onSale ? (
                                     <>
                                         <p className='lined-through'>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
@@ -43,7 +44,9 @@ const Cart = () => {
                                 ) : (
                                     <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
                                 )}
+                                </div>
                                 <p>Quantidade: {quantity}</p>
+                                
                             </div>
                             <button onClick={() => handleRemoveFromCart(id)}>Remover</button>
                         </div>
