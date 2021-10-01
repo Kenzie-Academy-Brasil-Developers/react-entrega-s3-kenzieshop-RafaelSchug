@@ -2,9 +2,23 @@ header {
     box-shadow: 0 0 2px #4e4e4e;
     height: 60px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    user-select: none;
+}
+
+header .logo {
+    text-transform: uppercase;
+    color: #585858;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo img {
+    height: 40px;
+    filter: opacity(0.8);
 }
 
 header ul {
@@ -40,4 +54,11 @@ header ul li span {
     background: #994dff;
     color: white;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 430px) {
+ 
+    header .logo h4 {
+        display: none;
+    }
 }
