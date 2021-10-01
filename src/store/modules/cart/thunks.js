@@ -1,4 +1,5 @@
-import {addToCart, removeFromCart} from "./actions";
+import {addToCart, removeFromCart, performCheckout} from "./actions";
+import { toast } from "react-toastify";
 
 export const addToCartThunk = (product) => (dispatch, globalStore) => {
 
@@ -28,4 +29,14 @@ export const removeFromCartThunk = (id) => (dispatch, globalStore) => {
     const cartUpdated = cart.filter(item => item.id !== id);
     dispatch(removeFromCart(cartUpdated));
     localStorage.setItem('@cart', JSON.stringify(cartUpdated))
+}
+
+export const performCheckoutThunk = () => (dispatch) => {
+    
+    const wait = new Promise((response) => {
+        setTimeout(response, 2000);
+    }).then(_ => dispatch(performCheckout([])))
+
+    toast.promise(wait, {pending: "Processando pedido...", success:"Pedido finalizado com sucesso!"}, {autoClose: 2000})
+    
 }

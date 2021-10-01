@@ -17,6 +17,11 @@
     transition: all .3s linear, box-shadow .1s linear;
     padding: 10px;
     background: white;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .product__card:hover {
@@ -36,6 +41,7 @@
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
+    padding: 0 10px;
 }
 
 .product__card button:hover {

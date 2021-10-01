@@ -21,6 +21,7 @@
 
 .cart__container .product__card {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     max-width: unset;
@@ -44,12 +45,18 @@
     background: #b91c1c;
 }
 
+.checkout {
+    width: 100%;
+    max-width: 200px;
+    min-width: 140px;
+}
+
 .checkout button {
     background: #08bb52;
     border: none;
     font-weight: bold;
     color: white;
-    width: 200px;
+    width: 100%;
     height: 30px;
     float: right;
     cursor: pointer;

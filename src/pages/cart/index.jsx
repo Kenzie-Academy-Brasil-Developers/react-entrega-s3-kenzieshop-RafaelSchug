@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCartThunk } from "../../store/modules/cart/thunks";
+import { removeFromCartThunk, performCheckoutThunk } from "../../store/modules/cart/thunks";
 import './style.css';
 
 const Cart = () => {
@@ -11,6 +11,10 @@ const Cart = () => {
         dispatch(removeFromCartThunk(id))
     }
 
+    const handleCheckout = () => {
+        dispatch(performCheckoutThunk());
+    }
+
     return (
         <div className='cart__container'>
             <div className='cart__information'>
@@ -18,7 +22,7 @@ const Cart = () => {
                 <p>Total: {(cart.reduce((acc, item)=> acc + (item.price * item.quantity), 0).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}))}</p>
                 {cart.length > 0 && (
                     <div className='checkout'>
-                        <button>Finalizar Compra</button>
+                        <button onClick={handleCheckout}>Finalizar Compra</button>
                     </div>
                 )}
             </div>
