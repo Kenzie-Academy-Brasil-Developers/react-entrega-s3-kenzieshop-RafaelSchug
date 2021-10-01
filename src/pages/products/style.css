@@ -32,7 +32,21 @@
     border: 1px dashed #d8d8d8;
     border-radius: 5px;
     flex: 1;
+    position: relative;
+}
 
+.product__card .onsale_tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #ff0000;
+    padding: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+.product__card .lined-through {
+    text-decoration: line-through;
 }
 
 .product__card h4 {

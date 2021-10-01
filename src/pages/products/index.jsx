@@ -14,12 +14,20 @@ const Products = () => {
     console.log(cart);
     return (
         <div className='products__container'>
-            {products.map(({name, img, price, id}, index) => {
+            {products.map(({name, img, price, id, onSale, discount}, index) => {
                 return (
                     <div className='product__card' key={index}>
+                        {onSale && <span className='onsale_tag'>{Math.round((discount / price * 100))}% OFF</span>}
                         <img src={img} alt={name} />
                         <h4>{name}</h4>
-                        <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                        {onSale ? (
+                            <div>
+                                <p className='lined-through'>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                                <p>{(price - discount).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                            </div>
+                        ) : (
+                            <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                        )}
                         <button onClick={() => handleAddtoCart(id)}>Adicionar ao carrinho</button>
                     </div>
                 )

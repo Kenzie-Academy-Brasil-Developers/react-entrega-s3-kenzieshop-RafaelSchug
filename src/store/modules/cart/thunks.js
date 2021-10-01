@@ -50,8 +50,13 @@ export const performCheckoutThunk = () => (dispatch) => {
     
     const wait = new Promise((response) => {
         setTimeout(response, 2000);
-    }).then(_ => dispatch(performCheckout([])))
+    }).then(_ => {
+        dispatch(performCheckout([]));
+        toast.info("Obrigado por comprar na Kenzie Shop! Volte sempre :)", {autoClose: 3500})
+    })
 
     toast.promise(wait, {pending: "Processando pedido...", success:"Pedido finalizado com sucesso!"}, {autoClose: 2000})
+
+    localStorage.removeItem('@cart');
     
 }
