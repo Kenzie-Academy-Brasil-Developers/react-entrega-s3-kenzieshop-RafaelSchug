@@ -28,19 +28,21 @@ const Cart = () => {
                 )}
             </div>
             
-            {cart.map(({name, img, price, id, quantity},index)=> {
-                return (
-                    <div className='product__card' key={index}>
-                        <img src={img} alt={name} />
-                        <div className='product_info'>
-                            <h4>{name}</h4>
-                            <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-                            <p>Quantidade: {quantity}</p>
+            {cart.length > 0 ? (
+                cart.map(({name, img, price, id, quantity},index)=> {
+                    return (
+                        <div className='product__card' key={index}>
+                            <img src={img} alt={name} />
+                            <div className='product_info'>
+                                <h4>{name}</h4>
+                                <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                                <p>Quantidade: {quantity}</p>
+                            </div>
+                            <button onClick={() => handleRemoveFromCart(id)}>Remover</button>
                         </div>
-                        <button onClick={() => handleRemoveFromCart(id)}>Remover</button>
-                    </div>
-                )
-            })}
+                    )
+                })
+            ) : <div className='empty__cart'><GrCart/></div> }
         </div> 
     )
 }

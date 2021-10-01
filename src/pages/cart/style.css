@@ -77,6 +77,18 @@
     background: #0d9c49;
 }
 
+.cart__container .empty__cart {
+    padding: 40px;
+}
+
+.cart__container .empty__cart svg  {
+    font-size: 50px;
+}
+.cart__container .empty__cart svg path{
+    font-size: 40px;
+    stroke: #a8a8a8;
+}
+
 @media screen and (max-width: 700px) {
     .cart__information {
         flex-direction: column;
