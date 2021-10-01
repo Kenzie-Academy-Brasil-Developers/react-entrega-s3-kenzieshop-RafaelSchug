@@ -1,10 +1,16 @@
-import { ADD_TO_CART } from "./actionTypes"
+import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes"
 
-const addToCart = (product) => {
+export const addToCart = (list) => {
     return {
         type: ADD_TO_CART,
-        product,
+        list,
     }
 }
 
-export default addToCart;
+export const removeFromCart = (list) => {
+    return {
+        type: REMOVE_FROM_CART,
+        list,
+    }
+}
+
