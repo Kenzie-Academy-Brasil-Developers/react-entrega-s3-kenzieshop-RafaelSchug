@@ -26,8 +26,23 @@ export const addToCartThunk = (product) => (dispatch, globalStore) => {
 
 export const removeFromCartThunk = (id) => (dispatch, globalStore) => {
     const {cart} = globalStore();
-    const cartUpdated = cart.filter(item => item.id !== id);
-    dispatch(removeFromCart(cartUpdated));
+    const checkQuantity = cart.find(item => item.id === id).quantity;
+    let cartUpdated;
+
+    if(checkQuantity > 1){
+        cartUpdated = cart.map(item => {
+            if(item.id === id){
+                return {...item, quantity : item.quantity - 1};
+            } else {
+                return item;
+            }
+        })
+        dispatch(removeFromCart(cartUpdated));
+    } else {
+        cartUpdated = cart.filter(item => item.id !== id);
+        dispatch(removeFromCart(cartUpdated));
+    }
+    
     localStorage.setItem('@cart', JSON.stringify(cartUpdated))
 }
 

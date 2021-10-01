@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCartThunk, performCheckoutThunk } from "../../store/modules/cart/thunks";
+import {GrCart} from 'react-icons/gr';
 import './style.css';
 
 const Cart = () => {
@@ -18,7 +19,7 @@ const Cart = () => {
     return (
         <div className='cart__container'>
             <div className='cart__information'>
-                <p>Quantidade de itens: {cart.reduce((acc, item)=> acc + item.quantity, 0)}</p>
+                <p><GrCart/> Quantidade de itens: {cart.reduce((acc, item)=> acc + item.quantity, 0)}</p>
                 <p>Total: {(cart.reduce((acc, item)=> acc + (item.price * item.quantity), 0).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}))}</p>
                 {cart.length > 0 && (
                     <div className='checkout'>

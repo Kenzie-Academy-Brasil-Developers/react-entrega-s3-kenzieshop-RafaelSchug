@@ -18,7 +18,26 @@ const initialState = [
         name: "Headphone Freedoom 2 Sound BT",
         img: "https://m.media-amazon.com/images/I/51WANCmFcQL._AC_SX679_.jpg",
         price: 249.00
+    },
+    {
+        id: 22,
+        name: "Smartphone Samsung Galaxy A10S 32GB Dual 6.2",
+        img: "https://m.media-amazon.com/images/I/61Or2BmHBoS._AC_SX679_.jpg",
+        price: 959.00
+    },
+    {
+        id: 27,
+        name: "Notebook Dell Inspiron i15-3501-A45P 15.6",
+        img: "https://m.media-amazon.com/images/I/616PBNK19aL._AC_SX679_.jpg",
+        price: 4399.00
+    },
+    {
+        id: 32,
+        name: "Wacom One CTL472 - Mesa Digitalizadora",
+        img: "https://m.media-amazon.com/images/I/71+xzUu92ZL._AC_SX679_.jpg",
+        price: 259.00
     }
+
 ]
 
 
