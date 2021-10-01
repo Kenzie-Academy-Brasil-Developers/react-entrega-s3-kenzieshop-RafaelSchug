@@ -1,6 +1,6 @@
 header {
-    border-bottom: 1px solid gray;
-    height: 50px;
+    box-shadow: 0 0 2px #666666;
+    height: 60px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -37,7 +37,7 @@ header ul li span {
     left: 10px;
     line-height: 20px;
     font-size: 14px;
-    background: #4343dd;
+    background: #994dff;
     color: white;
     border-radius: 50%;
 }

@@ -19,7 +19,7 @@ const Products = () => {
                     <div className='product__card' key={index}>
                         <img src={img} alt={name} />
                         <h4>{name}</h4>
-                        <p>$ {price.toFixed(2)}</p>
+                        <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
                         <button onClick={() => handleAddtoCart(id)}>Adicionar ao carrinho</button>
                     </div>
                 )
